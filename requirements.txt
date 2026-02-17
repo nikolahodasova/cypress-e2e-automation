@@ -1,0 +1,3 @@
+#Potrebné externé knižnice pre testovanie
+Cypress
+Cy.request
