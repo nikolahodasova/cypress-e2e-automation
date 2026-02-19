@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Stiahne tvoj kód
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm install
+          # Toto povie robotovi, aby nainštaloval balíčky "na silu" ako u teba
+          install-command: npm install --force
           browser: chrome
