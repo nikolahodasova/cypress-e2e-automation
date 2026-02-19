@@ -14,5 +14,5 @@ jobs:
           # Robot nainštaluje všetko potrebné
           install-command: npm install --force
           # Tu mu hovoríme: Spusti presne tento súbor
-          spec: cypress/e2e/login.cy.js 
+         #spec: cypress/e2e/login.cy.js
           browser: chrome
