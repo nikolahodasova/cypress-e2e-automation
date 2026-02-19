@@ -38,9 +38,9 @@ describe('User Login Flow', () => {
   it('Login with valid credentials', () => {
     cy.fixture('user').then((user) => {
 
-      cy.get('input[data-qa="login-email"]').type(user.email)
-      cy.get('input[data-qa="login-password"]').type(user.password)
-      cy.get('button[data-qa="login-button"]').click()
+      cy.xpath('//input[@data-qa="login-email"]').type(user.email)
+      cy.xpath('//input[@data-qa="login-password"]').type(user.password)
+      cy.xpath('//button[@data-qa="login-button"]').click()
 
       cy.contains('Logged in as')
     })
@@ -49,9 +49,9 @@ describe('User Login Flow', () => {
   it('Logout after login', () => {
     cy.fixture('user').then((user) => {
 
-      cy.get('input[data-qa="login-email"]').type(user.email)
-      cy.get('input[data-qa="login-password"]').type(user.password)
-      cy.get('button[data-qa="login-button"]').click()
+      cy.xpath('//input[@data-qa="login-email"]').type(user.email)
+      cy.xpath('//input[@data-qa="login-password"]').type(user.password)
+      cy.xpath('//button[@data-qa="login-button"]').click()
 
       cy.contains('Logout').click()
       cy.contains('Login to your account')
@@ -59,5 +59,19 @@ describe('User Login Flow', () => {
   })
 
 })
+/*describe('User flow', () => {
+
+  it('Login flow', () => {
+    cy.visit('/login')
+
+    cy.get('#username').type('tomsmith')
+    cy.get('#password').type('SuperSecretPassword!')
+    cy.get('button').click()
+
+    cy.url().should('include', '/secure')
+  })
+
+})
+ */
 
 
