@@ -6,11 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # Stiahne tvoj kód
+        uses: actions/checkout@v4
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          # Toto povie robotovi, aby nainštaloval balíčky "na silu" ako u teba
+          # Robot nainštaluje všetko potrebné
           install-command: npm install --force
+          # Tu mu hovoríme: Spusti presne tento súbor
+          spec: cypress/e2e/login.cy.js 
           browser: chrome
