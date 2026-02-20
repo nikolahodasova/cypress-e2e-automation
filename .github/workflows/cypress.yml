@@ -17,12 +17,13 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/login.cy.js" --browser chrome
-        env:
-          NODE_OPTIONS: "--import tsx"
+        run: npx cypress run --browser chrome
+        #run: npx cypress run --spec "cypress/e2e/login.cy.js" --browser chrome
+        #env:
+          #NODE_OPTIONS: "--import tsx"
