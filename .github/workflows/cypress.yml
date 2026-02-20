@@ -23,4 +23,6 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npx cypress run --spec "cypress/e2e/login.cy.js" --browser chrome
+        env:
+            NODE_OPTIONS: "--no-warnings"

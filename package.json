@@ -9,7 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^15.10.0",
