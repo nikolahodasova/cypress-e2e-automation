@@ -1,3 +1,5 @@
+import loginPage from '../page-objects/loginpage.js';
+
 describe('User Login Flow', () => {
 
   beforeEach(() => {
@@ -8,24 +10,20 @@ describe('User Login Flow', () => {
   it('Login with valid credentials', () => {
     cy.fixture('user').then((user) => {
 
-      cy.xpath('//input[@data-qa="login-email"]').type(user.email)
-      cy.xpath('//input[@data-qa="login-password"]').type(user.password)
-      cy.xpath('//button[@data-qa="login-button"]').click()
-
-      cy.contains('Logged in as')
+      loginPage.login(user.email, user.password);
     })
+
+    cy.contains('Logged in as').should('be.visible');
   })
 
   it('Logout after login', () => {
     cy.fixture('user').then((user) => {
 
-      cy.xpath('//input[@data-qa="login-email"]').type(user.email)
-      cy.xpath('//input[@data-qa="login-password"]').type(user.password)
-      cy.xpath('//button[@data-qa="login-button"]').click()
-
-      cy.contains('Logout').click()
-      cy.contains('Login to your account')
+      loginPage.login(user.email, user.password);
     })
+
+    loginPage.logout();
+    cy.contains('Login to your account').should('be.visible');
   })
 
 })
