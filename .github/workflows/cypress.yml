@@ -24,6 +24,3 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run --browser chrome
-        #run: npx cypress run --spec "cypress/e2e/login.cy.js" --browser chrome
-        #env:
-          #NODE_OPTIONS: "--import tsx"

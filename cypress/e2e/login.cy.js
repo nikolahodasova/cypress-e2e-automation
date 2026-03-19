@@ -1,33 +1,3 @@
-/* PRVÝ PROJEKT
-describe('Login Test', () => {
-
-  it('Should login successfully', () => {
-    cy.visit('/login')
-
-    cy.get('#username').type('tomsmith')
-    cy.get('#password').type('SuperSecretPassword!')
-    cy.get('button[type="submit"]').click()
-
-    cy.contains('Secure Area')
-  })
-
-  it('Should show error with wrong password', () => {
-  cy.visit('/login')
-
-  cy.get('#username').type('tomsmith')
-  cy.get('#password').type('wrong')
-  cy.get('button[type="submit"]').click()
-
-  cy.contains('Your password is invalid!')
-})
-    it('API test - get users', () => {
-  cy.request('GET', 'https://crudcrud.com/api/6715cb9373e24df583cf41e04d29ed1b/users')
-    .its('status')
-    .should('eq', 200)
-})
-
-
-})*/
 describe('User Login Flow', () => {
 
   beforeEach(() => {
@@ -59,19 +29,4 @@ describe('User Login Flow', () => {
   })
 
 })
-/*describe('User flow', () => {
-
-  it('Login flow', () => {
-    cy.visit('/login')
-
-    cy.get('#username').type('tomsmith')
-    cy.get('#password').type('SuperSecretPassword!')
-    cy.get('button').click()
-
-    cy.url().should('include', '/secure')
-  })
-
-})
- */
-
 
